@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MyApp.EntityFrameworkCore;
 using Volo.Abp.Autofac;
 using Volo.Abp.Modularity;
 
@@ -8,7 +9,8 @@ namespace MyApp.Console
 
     [DependsOn(
         typeof(AbpAutofacModule),
-        typeof(MyAppDomainModule)
+        typeof(MyAppDomainModule),
+        typeof(MyAppEntityFrameworkCoreModule)
     )]
     public class ConsoleModule : AbpModule
     {
